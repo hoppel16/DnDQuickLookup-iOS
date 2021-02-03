@@ -15,6 +15,7 @@
 		2BF9ACA925CA182B0088CE8F /* DnDQuickLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACA825CA182B0088CE8F /* DnDQuickLookupTests.swift */; };
 		2BF9ACB425CA182B0088CE8F /* DnDQuickLookupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACB325CA182B0088CE8F /* DnDQuickLookupUITests.swift */; };
 		2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */; };
+		2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2BF9ACB325CA182B0088CE8F /* DnDQuickLookupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDQuickLookupUITests.swift; sourceTree = "<group>"; };
 		2BF9ACB525CA182B0088CE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */,
+				2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */,
 				2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */,
+				2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */,
 				2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

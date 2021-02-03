@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="efY-3H-pDI">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Main-->
         <scene sceneID="WdW-aS-lHj">
             <objects>
                 <tableViewController id="xAN-i3-pO0" customClass="MainTableViewController" customModule="DnDQuickLookup" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,13 +16,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="daB-P0-ZhY">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="daB-P0-ZhY" customClass="MainTableViewCell" customModule="DnDQuickLookup" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="daB-P0-ZhY" id="K46-xS-lLZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-Jg-53g">
+                                            <rect key="frame" x="186.5" y="11.5" width="41.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="NJ9-Jg-53g" firstAttribute="centerX" secondItem="K46-xS-lLZ" secondAttribute="centerX" id="O1f-U8-muF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="NJ9-Jg-53g" secondAttribute="bottom" constant="0.5" id="adg-f8-WdE"/>
+                                        <constraint firstItem="NJ9-Jg-53g" firstAttribute="top" secondItem="K46-xS-lLZ" secondAttribute="topMargin" constant="0.5" id="haf-F1-xVk"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="mainString" destination="NJ9-Jg-53g" id="R7l-sL-PQQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -30,11 +46,11 @@
                             <outlet property="delegate" destination="xAN-i3-pO0" id="Rt1-kB-hRu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="L82-V5-DFL"/>
+                    <navigationItem key="navigationItem" title="Main" largeTitleDisplayMode="always" id="L82-V5-DFL"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4er-Yy-Rr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="108"/>
+            <point key="canvasLocation" x="328.98550724637681" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FdN-Ik-PCr">
