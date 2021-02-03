@@ -9,4 +9,5 @@ import UIKit
 
 class MainTableViewCell: UITableViewCell {
     @IBOutlet var mainString: UILabel!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
 }

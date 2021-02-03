@@ -9,7 +9,8 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    let test = ["Test 1", "Test 2", "Test 3"]
+    let networkAPI = Networking()
+    let test = ["acid-arrow", "polymorph", "chill-touch", "magic-missile"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,8 +28,24 @@ class MainTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "mainCell", for: indexPath) as? MainTableViewCell else { fatalError() }
-
-        cell.mainString.text = test[indexPath.row]
+        if cell.mainString.text?.isEmpty ?? true && !cell.activityIndicator.isAnimating {
+            cell.activityIndicator.startAnimating()
+            networkAPI.fetchSpellFromAPI(spellName: test[indexPath.row]) { result in
+                NSLog("Beggining Fetch")
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let decodedSpell):
+                        NSLog("Fetched \(decodedSpell.name)")
+                        cell.mainString.text = decodedSpell.name
+                        self.tableView.reloadData()
+                        cell.activityIndicator.stopAnimating()
+                    case .failure(_):
+                        cell.mainString.text = "ERROR"
+                        cell.activityIndicator.stopAnimating()
+                    }
+                }
+            }
+        }
 
         return cell
     }

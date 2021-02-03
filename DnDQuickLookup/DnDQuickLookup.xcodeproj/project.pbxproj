@@ -16,6 +16,10 @@
 		2BF9ACB425CA182B0088CE8F /* DnDQuickLookupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACB325CA182B0088CE8F /* DnDQuickLookupUITests.swift */; };
 		2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */; };
 		2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */; };
+		2BF9ACE025CA21F30088CE8F /* SpellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */; };
+		2BF9ACE625CA22D80088CE8F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACE525CA22D80088CE8F /* Networking.swift */; };
+		2BF9ACF325CA24010088CE8F /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACF225CA24010088CE8F /* NetworkDataLoader.swift */; };
+		2BF9ACFB25CA24680088CE8F /* URLSession+NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACFA25CA24680088CE8F /* URLSession+NetworkDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		2BF9ACB525CA182B0088CE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellModel.swift; sourceTree = "<group>"; };
+		2BF9ACE525CA22D80088CE8F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		2BF9ACF225CA24010088CE8F /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
+		2BF9ACFA25CA24680088CE8F /* URLSession+NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkDataLoader.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,9 @@
 		2BF9AC9025CA18280088CE8F /* DnDQuickLookup */ = {
 			isa = PBXGroup;
 			children = (
+				2BF9ACF125CA23CF0088CE8F /* Mocking */,
+				2BF9ACE425CA22CA0088CE8F /* Networking */,
+				2BF9ACDE25CA21E00088CE8F /* Models */,
 				2BF9ACCC25CA18BD0088CE8F /* Views */,
 				2BF9ACC725CA189A0088CE8F /* Storyboards */,
 				2BF9ACC825CA18AC0088CE8F /* AppLifecycle */,
@@ -153,6 +164,31 @@
 				2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2BF9ACDE25CA21E00088CE8F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2BF9ACE425CA22CA0088CE8F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				2BF9ACE525CA22D80088CE8F /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		2BF9ACF125CA23CF0088CE8F /* Mocking */ = {
+			isa = PBXGroup;
+			children = (
+				2BF9ACF225CA24010088CE8F /* NetworkDataLoader.swift */,
+				2BF9ACFA25CA24680088CE8F /* URLSession+NetworkDataLoader.swift */,
+			);
+			path = Mocking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +323,11 @@
 			files = (
 				2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */,
 				2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */,
+				2BF9ACFB25CA24680088CE8F /* URLSession+NetworkDataLoader.swift in Sources */,
 				2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */,
+				2BF9ACE625CA22D80088CE8F /* Networking.swift in Sources */,
+				2BF9ACE025CA21F30088CE8F /* SpellModel.swift in Sources */,
+				2BF9ACF325CA24010088CE8F /* NetworkDataLoader.swift in Sources */,
 				2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
