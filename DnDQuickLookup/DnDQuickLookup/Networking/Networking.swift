@@ -27,6 +27,31 @@ class Networking {
         self.dataLoader = dataLoader
     }
 
+    func fetchCategoryFromAPI(_ category: String, completion: @escaping (Result<ResultsModel, NetworkError>) -> Void) {
+        let requestURL = baseURL.appendingPathComponent(category)
+        let request = URLRequest(url: requestURL)
+        dataLoader.loadData(using: request) { data, _, error in
+            if let error = error {
+                NSLog("Failed to fetch category with error: \(error)")
+                completion(.failure(.failedFetch))
+            }
+
+            guard let data = data else {
+                NSLog("No data returned")
+                completion(.failure(.noData))
+                return
+            }
+
+            do {
+                let category = try self.jsonDecoder.decode(ResultsModel.self, from: data)
+                completion(.success(category))
+            } catch {
+                NSLog("Error decoding category from server: \(error)")
+                completion(.failure(.noDecode))
+            }
+        }
+    }
+
     func fetchSpellFromAPI(spellName: String, completion: @escaping (Result<SpellModel, NetworkError>) -> Void) {
         let requestURL = baseURL.appendingPathComponent("spells").appendingPathComponent(spellName)
         let request = URLRequest(url: requestURL)

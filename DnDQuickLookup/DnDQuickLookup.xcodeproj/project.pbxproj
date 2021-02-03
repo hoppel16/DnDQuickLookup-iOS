@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B3DB7AF25CB058E009D2D25 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7AE25CB058E009D2D25 /* CategoryViewController.swift */; };
+		2B3DB7B725CB074E009D2D25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */; };
+		2B3DB7C725CB0FFD009D2D25 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */; };
 		2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9125CA18280088CE8F /* AppDelegate.swift */; };
 		2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9325CA18280088CE8F /* SceneDelegate.swift */; };
 		2BF9AC9925CA18280088CE8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9725CA18280088CE8F /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B3DB7AE25CB058E009D2D25 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		2BF9AC8E25CA18280088CE8F /* DnDQuickLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDQuickLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF9AC9125CA18280088CE8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF9AC9325CA18280088CE8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B3DB7AA25CB055A009D2D25 /* TestModels */ = {
+			isa = PBXGroup;
+			children = (
+				2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */,
+				2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */,
+			);
+			path = TestModels;
+			sourceTree = "<group>";
+		};
 		2BF9AC8525CA18280088CE8F = {
 			isa = PBXGroup;
 			children = (
@@ -142,8 +157,8 @@
 		2BF9ACC725CA189A0088CE8F /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				2BF9AC9C25CA182A0088CE8F /* LaunchScreen.storyboard */,
 				2BF9AC9725CA18280088CE8F /* Main.storyboard */,
+				2BF9AC9C25CA182A0088CE8F /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -160,8 +175,9 @@
 		2BF9ACCC25CA18BD0088CE8F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */,
-				2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */,
+				2B3DB7AE25CB058E009D2D25 /* CategoryViewController.swift */,
+				2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */,
+				2B3DB7AA25CB055A009D2D25 /* TestModels */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,6 +185,7 @@
 		2BF9ACDE25CA21E00088CE8F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */,
 				2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */,
 			);
 			path = Models;
@@ -322,12 +339,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */,
+				2B3DB7C725CB0FFD009D2D25 /* ResultsModel.swift in Sources */,
 				2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */,
 				2BF9ACFB25CA24680088CE8F /* URLSession+NetworkDataLoader.swift in Sources */,
 				2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */,
 				2BF9ACE625CA22D80088CE8F /* Networking.swift in Sources */,
 				2BF9ACE025CA21F30088CE8F /* SpellModel.swift in Sources */,
 				2BF9ACF325CA24010088CE8F /* NetworkDataLoader.swift in Sources */,
+				2B3DB7B725CB074E009D2D25 /* DetailViewController.swift in Sources */,
+				2B3DB7AF25CB058E009D2D25 /* CategoryViewController.swift in Sources */,
 				2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,10 +8,11 @@
 import Foundation
 
 struct SpellModel: Codable {
-    let name: String
-    let desc: [String]
+    let index, name: String
+    let desc: [String]?
 
     enum CodingKeys: String, CodingKey {
+        case index
         case name
         case desc
     }
@@ -19,7 +20,8 @@ struct SpellModel: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
+        index = try container.decode(String.self, forKey: .index)
         name = try container.decode(String.self, forKey: .name)
-        desc = try container.decode([String].self, forKey: .desc)
+        desc = try container.decodeIfPresent([String].self, forKey: .desc)
     }
 }
