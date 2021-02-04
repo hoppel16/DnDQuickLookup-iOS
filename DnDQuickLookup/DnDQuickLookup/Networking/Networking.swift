@@ -27,6 +27,30 @@ class Networking {
         self.dataLoader = dataLoader
     }
 
+    func fetchAllCategoriesFromAPI(completion: @escaping (Result<String, NetworkError>) -> Void) {
+        let request = URLRequest(url: baseURL)
+        dataLoader.loadData(using: request) { data, _, error in
+            if let error = error {
+                NSLog("Failed to fetch categories with error: \(error)")
+                completion(.failure(.failedFetch))
+                return
+            }
+
+            guard let data = data else {
+                NSLog("No data was returned.")
+                completion(.failure(.noData))
+                return
+            }
+
+            guard let convertedCategories = String(data: data, encoding: .utf8) else {
+                NSLog("Failed to convert categories into string.")
+                completion(.failure(.noDecode))
+                return
+            }
+            completion(.success(convertedCategories))
+        }
+    }
+
     func fetchCategoryFromAPI(_ category: String, completion: @escaping (Result<ResultsModel, NetworkError>) -> Void) {
         let requestURL = baseURL.appendingPathComponent(category)
         let request = URLRequest(url: requestURL)
@@ -34,6 +58,7 @@ class Networking {
             if let error = error {
                 NSLog("Failed to fetch category with error: \(error)")
                 completion(.failure(.failedFetch))
+                return
             }
 
             guard let data = data else {
@@ -59,6 +84,7 @@ class Networking {
             if let error = error {
                 NSLog("Failed to fetch spell with error: \(error)")
                 completion(.failure(.failedFetch))
+                return
             }
 
             guard let data = data else {

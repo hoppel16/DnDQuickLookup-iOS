@@ -14,15 +14,40 @@ class CategoryViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
 
-    private let categories = ["Spells", "Classes", "Races"]
+    private var categories = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.delegate = self
         tableView.dataSource = self
+
+        fetchAllCategories()
     }
-    
+
+    private func fetchAllCategories() {
+        networkAPI.fetchAllCategoriesFromAPI { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let decodedCategories):
+                    self.convertJSONStringintoCategories(decodedCategories)
+                case .failure(_):
+                    print("ERROR")
+                }
+            }
+        }
+    }
+
+    private func convertJSONStringintoCategories(_ jsonString: String) {
+        let splitCategories = jsonString.split(separator: ",")
+        for category in splitCategories {
+            var seperatedCategory = String(category.split(separator: ":")[0])
+            seperatedCategory = seperatedCategory.replacingOccurrences(of: ["{", "\\", "\"", ")"], with: "")
+            seperatedCategory = seperatedCategory.replacingOccurrences(of: "-", with: " ")
+            self.categories.append(seperatedCategory.capitalized)
+        }
+        self.tableView.reloadData()
+    }
 
     // MARK: - Navigation
 
@@ -38,7 +63,6 @@ class CategoryViewController: UIViewController {
             VC.networkAPI = networkAPI
         }
     }
-
 }
 
 extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {

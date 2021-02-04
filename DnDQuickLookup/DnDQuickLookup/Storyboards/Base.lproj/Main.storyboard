@@ -8,57 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main-->
-        <scene sceneID="WdW-aS-lHj">
-            <objects>
-                <tableViewController id="xAN-i3-pO0" customClass="MainTableViewController" customModule="DnDQuickLookup" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VO2-4v-naW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="mainCell" id="daB-P0-ZhY" customClass="MainTableViewCell" customModule="DnDQuickLookup" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="23.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="daB-P0-ZhY" id="K46-xS-lLZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="23.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ9-Jg-53g">
-                                            <rect key="frame" x="207" y="11.5" width="0.0" height="0.5"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="u7j-pB-AWC">
-                                            <rect key="frame" x="197" y="2" width="20" height="20"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="u7j-pB-AWC" firstAttribute="centerX" secondItem="K46-xS-lLZ" secondAttribute="centerX" id="7KP-Mo-qRv"/>
-                                        <constraint firstItem="NJ9-Jg-53g" firstAttribute="centerX" secondItem="K46-xS-lLZ" secondAttribute="centerX" id="O1f-U8-muF"/>
-                                        <constraint firstItem="u7j-pB-AWC" firstAttribute="centerY" secondItem="K46-xS-lLZ" secondAttribute="centerY" id="Rmb-85-zvN"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="NJ9-Jg-53g" secondAttribute="bottom" constant="0.5" id="adg-f8-WdE"/>
-                                        <constraint firstItem="NJ9-Jg-53g" firstAttribute="top" secondItem="K46-xS-lLZ" secondAttribute="topMargin" constant="0.5" id="haf-F1-xVk"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="activityIndicator" destination="u7j-pB-AWC" id="a2j-00-LFC"/>
-                                    <outlet property="mainString" destination="NJ9-Jg-53g" id="R7l-sL-PQQ"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="xAN-i3-pO0" id="EUz-FH-Jsz"/>
-                            <outlet property="delegate" destination="xAN-i3-pO0" id="Rt1-kB-hRu"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Main" id="L82-V5-DFL"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4er-Yy-Rr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="328.98550724637681" y="107.8125"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="b51-kB-ZEf">
             <objects>
@@ -136,22 +85,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3z-jr-JPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="344.92753623188406" y="-689.0625"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="FdN-Ik-PCr">
-            <objects>
-                <navigationController id="efY-3H-pDI" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Byt-hO-JrQ">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="xAN-i3-pO0" kind="relationship" relationship="rootViewController" id="2nY-dw-iOy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="opY-se-RfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-560" y="108"/>
         </scene>
         <!--D&D Lookup Category-->
         <scene sceneID="62N-46-0me">
