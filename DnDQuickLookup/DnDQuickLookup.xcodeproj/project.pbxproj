@@ -11,6 +11,7 @@
 		2B3DB7B725CB074E009D2D25 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */; };
 		2B3DB7C725CB0FFD009D2D25 /* ResultsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */; };
 		2B3DB7D025CC8424009D2D25 /* String+ReplacingOccurrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7CF25CC8424009D2D25 /* String+ReplacingOccurrences.swift */; };
+		2B3DB7D825CC9088009D2D25 /* AdvancedDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3DB7D725CC9088009D2D25 /* AdvancedDetailViewController.swift */; };
 		2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9125CA18280088CE8F /* AppDelegate.swift */; };
 		2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9325CA18280088CE8F /* SceneDelegate.swift */; };
 		2BF9AC9925CA18280088CE8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9725CA18280088CE8F /* Main.storyboard */; };
@@ -18,9 +19,7 @@
 		2BF9AC9E25CA182A0088CE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2BF9AC9C25CA182A0088CE8F /* LaunchScreen.storyboard */; };
 		2BF9ACA925CA182B0088CE8F /* DnDQuickLookupTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACA825CA182B0088CE8F /* DnDQuickLookupTests.swift */; };
 		2BF9ACB425CA182B0088CE8F /* DnDQuickLookupUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACB325CA182B0088CE8F /* DnDQuickLookupUITests.swift */; };
-		2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */; };
-		2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */; };
-		2BF9ACE025CA21F30088CE8F /* SpellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */; };
+		2BF9ACE025CA21F30088CE8F /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACDF25CA21F30088CE8F /* DetailModel.swift */; };
 		2BF9ACE625CA22D80088CE8F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACE525CA22D80088CE8F /* Networking.swift */; };
 		2BF9ACF325CA24010088CE8F /* NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACF225CA24010088CE8F /* NetworkDataLoader.swift */; };
 		2BF9ACFB25CA24680088CE8F /* URLSession+NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF9ACFA25CA24680088CE8F /* URLSession+NetworkDataLoader.swift */; };
@@ -48,6 +47,7 @@
 		2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsModel.swift; sourceTree = "<group>"; };
 		2B3DB7CF25CC8424009D2D25 /* String+ReplacingOccurrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ReplacingOccurrences.swift"; sourceTree = "<group>"; };
+		2B3DB7D725CC9088009D2D25 /* AdvancedDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedDetailViewController.swift; sourceTree = "<group>"; };
 		2BF9AC8E25CA18280088CE8F /* DnDQuickLookup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDQuickLookup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF9AC9125CA18280088CE8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BF9AC9325CA18280088CE8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,9 +61,7 @@
 		2BF9ACAF25CA182B0088CE8F /* DnDQuickLookupUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDQuickLookupUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BF9ACB325CA182B0088CE8F /* DnDQuickLookupUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDQuickLookupUITests.swift; sourceTree = "<group>"; };
 		2BF9ACB525CA182B0088CE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
-		2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellModel.swift; sourceTree = "<group>"; };
+		2BF9ACDF25CA21F30088CE8F /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		2BF9ACE525CA22D80088CE8F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		2BF9ACF225CA24010088CE8F /* NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataLoader.swift; sourceTree = "<group>"; };
 		2BF9ACFA25CA24680088CE8F /* URLSession+NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkDataLoader.swift"; sourceTree = "<group>"; };
@@ -94,15 +92,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B3DB7AA25CB055A009D2D25 /* TestModels */ = {
-			isa = PBXGroup;
-			children = (
-				2BF9ACCD25CA191E0088CE8F /* MainTableViewController.swift */,
-				2BF9ACD525CA1E100088CE8F /* MainTableViewCell.swift */,
-			);
-			path = TestModels;
-			sourceTree = "<group>";
-		};
 		2B3DB7CE25CC83FD009D2D25 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,7 +177,7 @@
 			children = (
 				2B3DB7AE25CB058E009D2D25 /* CategoryViewController.swift */,
 				2B3DB7B625CB074E009D2D25 /* DetailViewController.swift */,
-				2B3DB7AA25CB055A009D2D25 /* TestModels */,
+				2B3DB7D725CC9088009D2D25 /* AdvancedDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,7 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				2B3DB7C625CB0FFD009D2D25 /* ResultsModel.swift */,
-				2BF9ACDF25CA21F30088CE8F /* SpellModel.swift */,
+				2BF9ACDF25CA21F30088CE8F /* DetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -351,14 +340,13 @@
 			files = (
 				2BF9AC9225CA18280088CE8F /* AppDelegate.swift in Sources */,
 				2B3DB7C725CB0FFD009D2D25 /* ResultsModel.swift in Sources */,
-				2BF9ACCE25CA191E0088CE8F /* MainTableViewController.swift in Sources */,
 				2BF9ACFB25CA24680088CE8F /* URLSession+NetworkDataLoader.swift in Sources */,
-				2BF9ACD625CA1E100088CE8F /* MainTableViewCell.swift in Sources */,
 				2BF9ACE625CA22D80088CE8F /* Networking.swift in Sources */,
-				2BF9ACE025CA21F30088CE8F /* SpellModel.swift in Sources */,
+				2BF9ACE025CA21F30088CE8F /* DetailModel.swift in Sources */,
 				2BF9ACF325CA24010088CE8F /* NetworkDataLoader.swift in Sources */,
 				2B3DB7D025CC8424009D2D25 /* String+ReplacingOccurrences.swift in Sources */,
 				2B3DB7B725CB074E009D2D25 /* DetailViewController.swift in Sources */,
+				2B3DB7D825CC9088009D2D25 /* AdvancedDetailViewController.swift in Sources */,
 				2B3DB7AF25CB058E009D2D25 /* CategoryViewController.swift in Sources */,
 				2BF9AC9425CA18280088CE8F /* SceneDelegate.swift in Sources */,
 			);

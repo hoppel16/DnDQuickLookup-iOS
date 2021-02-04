@@ -14,4 +14,9 @@ extension String {
         }
         return self
     }
+
+    mutating func prettyPrint() -> String {
+        self = self.replacingOccurrences(of: "-", with: " ").capitalized
+        return self
+    }
 }

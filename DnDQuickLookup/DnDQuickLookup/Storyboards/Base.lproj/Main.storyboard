@@ -22,7 +22,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8mX-f0-aVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579" y="-689"/>
+            <point key="canvasLocation" x="-886" y="275"/>
         </scene>
         <!--D&D Lookup-->
         <scene sceneID="W7a-37-E3I">
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C3z-jr-JPI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="344.92753623188406" y="-689.0625"/>
+            <point key="canvasLocation" x="38" y="275"/>
         </scene>
         <!--D&D Lookup Category-->
         <scene sceneID="62N-46-0me">
@@ -119,7 +119,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="qKe-jf-vLL" kind="show" id="LhV-1G-jqK"/>
+                                            <segue destination="qKe-jf-vLL" kind="show" identifier="AdvancedDetailSegue" id="LhV-1G-jqK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -146,35 +146,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rdt-3A-N0s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-689"/>
+            <point key="canvasLocation" x="913" y="275"/>
         </scene>
-        <!--View Controller-->
+        <!--Advanced Detail-->
         <scene sceneID="KIG-F8-87A">
             <objects>
-                <viewController id="qKe-jf-vLL" sceneMemberID="viewController">
+                <viewController id="qKe-jf-vLL" customClass="AdvancedDetailViewController" customModule="DnDQuickLookup" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eKb-TX-7JF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfu-IT-s3B">
-                                <rect key="frame" x="165" y="140" width="84" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfu-IT-s3B">
+                                <rect key="frame" x="20" y="180" width="374" height="41"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bBw-KW-dNZ">
+                                <rect key="frame" x="20" y="229" width="374" height="613"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tMu-1u-bYM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gfu-IT-s3B" firstAttribute="leading" secondItem="tMu-1u-bYM" secondAttribute="leading" constant="20" id="8qp-c7-UQ7"/>
+                            <constraint firstItem="tMu-1u-bYM" firstAttribute="trailing" secondItem="gfu-IT-s3B" secondAttribute="trailing" constant="20" id="MbH-tb-5pc"/>
+                            <constraint firstItem="bBw-KW-dNZ" firstAttribute="top" secondItem="gfu-IT-s3B" secondAttribute="bottom" constant="8" symbolic="YES" id="TRF-9t-IRU"/>
+                            <constraint firstItem="gfu-IT-s3B" firstAttribute="top" secondItem="tMu-1u-bYM" secondAttribute="top" constant="40" id="W5J-T5-Gne"/>
+                            <constraint firstItem="tMu-1u-bYM" firstAttribute="bottom" secondItem="bBw-KW-dNZ" secondAttribute="bottom" constant="20" id="WLs-co-Agf"/>
+                            <constraint firstItem="bBw-KW-dNZ" firstAttribute="leading" secondItem="tMu-1u-bYM" secondAttribute="leading" constant="20" id="Zhc-H4-J0q"/>
+                            <constraint firstItem="tMu-1u-bYM" firstAttribute="trailing" secondItem="bBw-KW-dNZ" secondAttribute="trailing" constant="20" id="qPT-Rd-Q4G"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="69U-dX-Dne"/>
+                    <navigationItem key="navigationItem" title="Advanced Detail" id="69U-dX-Dne"/>
+                    <connections>
+                        <outlet property="detailDescription" destination="bBw-KW-dNZ" id="KKQ-nO-Jnc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ah-hS-K1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2119" y="-689"/>
+            <point key="canvasLocation" x="1813" y="275"/>
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

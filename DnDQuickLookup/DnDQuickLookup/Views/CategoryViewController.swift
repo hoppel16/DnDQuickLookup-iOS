@@ -14,7 +14,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
 
-    private var categories = [String]()
+    private var categories = [String: String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,10 +41,13 @@ class CategoryViewController: UIViewController {
     private func convertJSONStringintoCategories(_ jsonString: String) {
         let splitCategories = jsonString.split(separator: ",")
         for category in splitCategories {
-            var seperatedCategory = String(category.split(separator: ":")[0])
-            seperatedCategory = seperatedCategory.replacingOccurrences(of: ["{", "\\", "\"", ")"], with: "")
-            seperatedCategory = seperatedCategory.replacingOccurrences(of: "-", with: " ")
-            self.categories.append(seperatedCategory.capitalized)
+            var mutableCategory = String(category)
+            mutableCategory = mutableCategory.replacingOccurrences(of: ["{", "\\", "\"", ")"], with: "")
+            let seperatedCategory = mutableCategory.split(separator: ":")
+            var categoryName = String(seperatedCategory[0])
+            categoryName = categoryName.replacingOccurrences(of: "-", with: " ").capitalized
+            let categoryIndex = String(seperatedCategory[0])
+            self.categories[categoryName] = categoryIndex
         }
         self.tableView.reloadData()
     }
@@ -56,10 +59,11 @@ class CategoryViewController: UIViewController {
         if segue.identifier == "DetailSegue" {
             guard let indexPath = tableView.indexPathForSelectedRow,
                   let cell = tableView.cellForRow(at: indexPath),
+                  let cellText = cell.textLabel?.text,
                   let VC = segue.destination as? DetailViewController
                   else { return }
 
-            VC.selectedCategory = cell.textLabel?.text
+            VC.selectedCategory = self.categories[cellText]
             VC.networkAPI = networkAPI
         }
     }
@@ -72,7 +76,8 @@ extension CategoryViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-        cell.textLabel?.text = categories[indexPath.row]
+        let categoryTitles = Array(categories.keys).sorted()
+        cell.textLabel?.text = categoryTitles[indexPath.row]
         return cell
     }
 

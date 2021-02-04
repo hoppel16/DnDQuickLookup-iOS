@@ -77,8 +77,8 @@ class Networking {
         }
     }
 
-    func fetchSpellFromAPI(spellName: String, completion: @escaping (Result<SpellModel, NetworkError>) -> Void) {
-        let requestURL = baseURL.appendingPathComponent("spells").appendingPathComponent(spellName)
+    func fetchDetailFromAPI(categoryName: String, detailName: String, completion: @escaping (Result<DetailModel, NetworkError>) -> Void) {
+        let requestURL = baseURL.appendingPathComponent(categoryName).appendingPathComponent(detailName)
         let request = URLRequest(url: requestURL)
         dataLoader.loadData(using: request) { data, _, error in
             if let error = error {
@@ -94,8 +94,8 @@ class Networking {
             }
 
             do {
-                let spell = try self.jsonDecoder.decode(SpellModel.self, from: data)
-                completion(.success(spell))
+                let detail = try self.jsonDecoder.decode(DetailModel.self, from: data)
+                completion(.success(detail))
             } catch {
                 NSLog("Error decoding spell from server: \(error)")
                 completion(.failure(.noDecode))

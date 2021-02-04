@@ -1,5 +1,5 @@
 //
-//  SpellModel.swift
+//  DetailModel.swift
 //  DnDQuickLookup
 //
 //  Created by Hunter Oppel on 2/2/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpellModel: Codable {
+struct DetailModel: Codable {
     let index, name: String
     let desc: [String]?
 

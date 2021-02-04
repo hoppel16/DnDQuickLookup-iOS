@@ -13,8 +13,7 @@ class DetailViewController: UIViewController {
     var networkAPI: Networking?
 
     // #TODO: Move this into CoreData
-    var spellList = [String]()
-    var spells: [String:CategoryResult] = [:]
+    var details: [String: CategoryResult] = [:]
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -28,6 +27,7 @@ class DetailViewController: UIViewController {
         if let selectedCategory = selectedCategory {
             fetchCategory(selectedCategory)
         }
+        self.title = selectedCategory?.prettyPrint()
     }
 
     private func fetchCategory(_ category: String) {
@@ -37,9 +37,8 @@ class DetailViewController: UIViewController {
                 switch result {
                 case .success(let results):
                     for result in results.results {
-                        if (self.spells[result.name] == nil) {
-                            self.spellList.append(result.name)
-                            self.spells[result.name] = result
+                        if (self.details[result.name] == nil) {
+                            self.details[result.name] = result
                         }
                     }
                 case .failure(_):
@@ -50,28 +49,37 @@ class DetailViewController: UIViewController {
         }
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "AdvancedDetailSegue" {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                  let cell = tableView.cellForRow(at: indexPath),
+                  let cellText = cell.textLabel?.text,
+                  let VC = segue.destination as? AdvancedDetailViewController
+                  else { return }
+
+            VC.selectedCategory = self.selectedCategory
+            VC.selectedDetail = self.details[cellText]
+            VC.networkAPI = self.networkAPI
+        }
     }
-    */
 
 }
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        spells.count
+        details.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCell", for: indexPath)
-
-        cell.textLabel?.text = spellList[indexPath.row]
-
+        let detailList = Array(details.keys).sorted()
+        cell.textLabel?.text = detailList[indexPath.row]
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
